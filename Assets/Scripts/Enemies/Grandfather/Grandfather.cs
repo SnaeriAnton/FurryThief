@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(GrandfatherSeekrRaccoon))]
+[RequireComponent(typeof(GrandfatherVision))]
 [RequireComponent(typeof(Mover))]
 public class Grandfather : MonoBehaviour
 {
     [SerializeField] private int _speed;
-    [SerializeField] private GrandfatherSeekrRaccoon _enemySeekerPlayer;
+    [SerializeField] private GrandfatherVision _enemySeekerPlayer;
     [SerializeField] private Mover _mover;
 
     private int _target = 1;
@@ -35,12 +35,13 @@ public class Grandfather : MonoBehaviour
         _mover.Move(direction, _speed);
     }
 
-    private int RandomDirection()
+    private int RandomDirection(int currentDirection)
     {
         int direction = Random.Range(-1, 2);
-        while (direction == 0)
+        direction = Random.Range(-1, 2);
+        if (direction == 0)
         {
-            direction = Random.Range(-1, 2);
+            direction = currentDirection;
         }
         return direction;
     }
@@ -68,27 +69,27 @@ public class Grandfather : MonoBehaviour
     {
         if (_followPlayerl == false)
         {
-            if (collision.GetComponent<RightPoint>())
+            if (collision.TryGetComponent<RightPoint>(out RightPoint rightPoint))
             {
                 _target = -1;
             }
 
-            if (collision.GetComponent<LeftPoint>())
+            if (collision.TryGetComponent<LeftPoint>(out LeftPoint leftPoint))
             {
                 _target = 1;
             }
 
-            if (collision.GetComponent<Point>())
+            if (collision.TryGetComponent<Point>(out Point point))
             {
-                _target = RandomDirection();
+                _target = RandomDirection(_target);
             }
 
-            if (collision.GetComponent<LadderMovePoint>())
+            if (collision.TryGetComponent<LadderMovePoint>(out LadderMovePoint ladderMovePoint))
             {
                 Direction = new Vector2(0, RandomDirectionStairs());
             }
 
-            if (collision.GetComponent<LadderPoint>())
+            if (collision.TryGetComponent<LadderPoint>(out LadderPoint ladderPoint))
             {
                 Direction = new Vector2(0, 0);
             }

@@ -15,6 +15,6 @@ public class DataManeger : MonoBehaviour
         _tools.HandOverTools(information.GetTools());
         _bag.HandOverItems(information.GetItems());
         _bag.HandOverRoomins(information.BagCopacity);
-        _configurationLevel.HandOverConfiguration(information.RaccoonPlays);
+        _configurationLevel.HandOver(information.RaccoonPlays);
     }
 }

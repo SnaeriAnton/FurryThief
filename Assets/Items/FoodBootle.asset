@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Bootle
   _prica: 1
   _icon: {fileID: 21300000, guid: 9dc97ebefe332044d8c17f540b6862fa, type: 3}
-  _stolen: 1
+  _stolen: 0

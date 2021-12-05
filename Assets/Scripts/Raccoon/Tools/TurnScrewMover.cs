@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Transform))]
 public class TurnScrewMover : MonoBehaviour
 {
     [SerializeField] private Transform _transform;
@@ -63,7 +62,7 @@ public class TurnScrewMover : MonoBehaviour
     {
         if (_kernel != null && _kernel.Unblock == false)
         {
-            _kernel.OpenKernel();
+            _kernel.Open();
         }
     }
 
@@ -81,13 +80,13 @@ public class TurnScrewMover : MonoBehaviour
             _kernel = kernel;
         }
 
-        if (collision.GetComponent<LockBeginning>())
+        if (collision.TryGetComponent<LockBeginning>(out LockBeginning lockBeginning))
         {
             _lockBeginning = true;
             _kernel = null;
         }
 
-        if (collision.GetComponent<LockEnd>())
+        if (collision.TryGetComponent<LockEnd>(out LockEnd lockEnd))
         {
             _lockEnd = true;
             _kernel = null;

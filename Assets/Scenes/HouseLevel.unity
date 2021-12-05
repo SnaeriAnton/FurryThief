@@ -3963,7 +3963,7 @@ MonoBehaviour:
   _circleCollider2D: {fileID: 253910849}
   _distance: -1
   _direction: 1
-  _dogObject: {fileID: 720868874}
+  _dogMover: {fileID: 720868876}
   _audioSource: {fileID: 253910850}
 --- !u!58 &253910849
 CircleCollider2D:
@@ -17951,7 +17951,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589861510}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: baa57eff4e46b9e4c8117a5350bd9fcf, type: 3}
@@ -19558,7 +19558,7 @@ PrefabInstance:
       objectReference: {fileID: 363179217}
     - target: {fileID: 9176315399393339398, guid: 89d40444164eafb49b44f4223324d044, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9176315399393339398, guid: 89d40444164eafb49b44f4223324d044, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21180,9 +21180,9 @@ GameObject:
   m_Component:
   - component: {fileID: 720868875}
   - component: {fileID: 720868880}
-  - component: {fileID: 720868879}
   - component: {fileID: 720868878}
   - component: {fileID: 720868877}
+  - component: {fileID: 720868879}
   - component: {fileID: 720868876}
   - component: {fileID: 720868881}
   - component: {fileID: 720868882}
@@ -21283,9 +21283,6 @@ MonoBehaviour:
   _playerMask:
     serializedVersion: 2
     m_Bits: 8
-  _dog: {fileID: 720868876}
-  _rigidbody2D: {fileID: 720868878}
-  _audioSource: {fileID: 720868883}
 --- !u!212 &720868880
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22050,7 +22047,7 @@ PrefabInstance:
       objectReference: {fileID: 363179217}
     - target: {fileID: 9176315399393339398, guid: 89d40444164eafb49b44f4223324d044, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9176315399393339398, guid: 89d40444164eafb49b44f4223324d044, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27176,7 +27173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &961245499
 Transform:
   m_ObjectHideFlags: 0
@@ -30789,13 +30786,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1189181595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3408047610ad384f8acf151b93152c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ef3b41bd2eddc14abed1b292c49f09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tools:
-  - {fileID: 11400000, guid: c7ec7e96f2a23eb42a461a7cb1b2b6b3, type: 2}
-  - {fileID: 11400000, guid: d4c2d714bb8d75347879c2c6159bbf2d, type: 2}
-  - {fileID: 11400000, guid: d125c90bb367f1147b7b9ea54ff3a3bc, type: 2}
+  _tools: []
 --- !u!114 &1189181598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30895,7 +30889,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1137967864}
   m_HandleRect: {fileID: 1137967863}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -34381,10 +34375,9 @@ PolygonCollider2D:
       - {x: 0.009019852, y: -2.9606004}
       - {x: 0.0008211881, y: -1.4164337}
       - {x: 0.0027481914, y: -1.033046}
-      - {x: 0.053131655, y: -0.998145}
-      - {x: 0.00025303662, y: -1.0201198}
-      - {x: -0.014647111, y: -1.029687}
-      - {x: -0.03780061, y: -1.046902}
+      - {x: 0.07732947, y: -1.0025868}
+      - {x: -0.0008531511, y: -1.0001875}
+      - {x: -0.041569978, y: -1.0418762}
 --- !u!66 &1383949132
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -35390,7 +35383,7 @@ MonoBehaviour:
   _circleCollider2D: {fileID: 1402668215}
   _distance: -1
   _direction: 1
-  _dogObject: {fileID: 720868874}
+  _dogMover: {fileID: 720868876}
   _audioSource: {fileID: 1402668216}
 --- !u!58 &1402668215
 CircleCollider2D:
@@ -37428,9 +37421,9 @@ MonoBehaviour:
   _transform: {fileID: 1531135075}
   _sensor: {fileID: 1531135074}
   _circleCollider2D: {fileID: 1531135077}
-  _distance: -1
-  _direction: 1
-  _dogObject: {fileID: 720868874}
+  _distance: 1
+  _direction: -1
+  _dogMover: {fileID: 720868876}
   _audioSource: {fileID: 1531135078}
 --- !u!58 &1531135077
 CircleCollider2D:
@@ -38293,7 +38286,7 @@ MonoBehaviour:
   _circleCollider2D: {fileID: 1592450327}
   _distance: 1
   _direction: -1
-  _dogObject: {fileID: 720868874}
+  _dogMover: {fileID: 720868876}
   _audioSource: {fileID: 1592450326}
 --- !u!1 &1600299177
 GameObject:
@@ -61953,7 +61946,7 @@ PrefabInstance:
       objectReference: {fileID: 363179217}
     - target: {fileID: 9176315399393339398, guid: 89d40444164eafb49b44f4223324d044, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9176315399393339398, guid: 89d40444164eafb49b44f4223324d044, type: 3}
       propertyPath: m_LocalPosition.x

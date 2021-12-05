@@ -19,7 +19,7 @@ public class RaccoonSale : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Shop>())
+        if (collision.TryGetComponent<Shop>(out Shop shop))
         {
             _inShop = true;
         }

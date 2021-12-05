@@ -847,7 +847,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404524928}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8b971e3536732504d964c82c7a4295ca, type: 3}
@@ -7420,7 +7420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e813254c9dc8e84bbfa3775d1ffa008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raccoonPlays: 0
 --- !u!1 &2138796978
 GameObject:
   m_ObjectHideFlags: 0

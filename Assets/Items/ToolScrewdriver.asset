@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Screw Driver
   _prica: 30
   _icon: {fileID: 21300000, guid: 6b2bef5f9db1019459718c8e60e9498d, type: 3}
-  _stolen: 1
+  _stolen: 0

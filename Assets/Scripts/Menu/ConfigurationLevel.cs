@@ -8,7 +8,7 @@ public class ConfigurationLevel : MonoBehaviour
 
     public bool RaccoonPlays => _raccoonPlays;
 
-    public void HandOverConfiguration(bool raccoonPlays)
+    public void HandOver(bool raccoonPlays)
     {
         _raccoonPlays = raccoonPlays;
     }
@@ -18,7 +18,7 @@ public class ConfigurationLevel : MonoBehaviour
         _raccoonPlays = false;
     }
 
-    public void SetPlayerConfiguration()
+    public void SetPlayer()
     {
         _raccoonPlays = true;
     }

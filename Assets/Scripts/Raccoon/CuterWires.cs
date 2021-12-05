@@ -10,7 +10,7 @@ public class CuterWires : MonoBehaviour
     {
         if (_signalingController != null)
         {
-            _signalingController.DisableSignaling();
+            _signalingController.Disable();
         }
     }
 

@@ -22,7 +22,7 @@ public class LockDoor : MonoBehaviour
 
     private void ShowPanleLock(Transform transform)
     {
-        _lock.ShowLock(transform);
+        _lock.Show(transform);
     }
 
     private void OpenDoor()

@@ -21,16 +21,16 @@ public class Ladder : MonoBehaviour
         remove => _enabledFloor.RemoveListener(value);
     }
 
-    private void EnableLadder()
+    private void Enable()
     {
         _enabledFloor?.Invoke();
-        _moveLadde.Climbed -= EnableLadder;
+        _moveLadde.Climbed -= Enable;
     }
 
-    private void DisableLadder()
+    private void Disable()
     {
         _disabledFloor?.Invoke();
-        _moveLadde.GotOff -= DisableLadder;
+        _moveLadde.GotOff -= Disable;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -38,8 +38,8 @@ public class Ladder : MonoBehaviour
         if (collision.TryGetComponent<RaccoonMoveLadder>( out RaccoonMoveLadder raccoonMoveLadder))
         {
             _moveLadde = raccoonMoveLadder;
-            _moveLadde.Climbed += EnableLadder;
-            _moveLadde.GotOff += DisableLadder;
+            _moveLadde.Climbed += Enable;
+            _moveLadde.GotOff += Disable;
         }
     }
 }

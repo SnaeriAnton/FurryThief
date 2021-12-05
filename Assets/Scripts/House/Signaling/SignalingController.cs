@@ -15,30 +15,30 @@ public class SignalingController : MonoBehaviour
 
     private void OnEnable()
     {
-        _itemsManager.SignalingTurnOn += EnableSignaling;
+        _itemsManager.SignalingTurnOn += Enable;
     }
 
     private void OnDisable()
     {
-        _itemsManager.SignalingTurnOn -= EnableSignaling;
+        _itemsManager.SignalingTurnOn -= Enable;
     }
 
-    private void EnableSignaling()
+    private void Enable()
     {
         _sensors = GetComponentsInChildren<Sensor>();
         foreach (var sebsor in _sensors)
         {
-            sebsor.EnabkeSensor();
+            sebsor.Enabke();
         }
     }
 
-    public void DisableSignaling()
+    public void Disable()
     {
         _spriteRenderer.sprite = _spritePanelControl;
         _audioSource.enabled = true;
         foreach (var sebsor in _sensors)
         {
-            sebsor.DisableSensor();
+            sebsor.Disable();
         }
     }
 }

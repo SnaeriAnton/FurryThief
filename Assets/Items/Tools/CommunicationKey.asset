@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: Communication Key
   _prica: 1
   _icon: {fileID: 21300000, guid: 5bb43c498606c0c4eb9aa0e800382d36, type: 3}
-  _stolen: 1
+  _stolen: 0
   _bag: 0
   _bought: 0
   _toolObject: {fileID: 3516254525406671170, guid: 956a1b640a0817f49a4147f1e457a3e7, type: 3}

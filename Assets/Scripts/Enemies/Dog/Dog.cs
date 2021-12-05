@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Transform))]
 [RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(DogVision))]
 public class Dog : MonoBehaviour
 {
     [SerializeField] private float _speed;
@@ -19,6 +21,16 @@ public class Dog : MonoBehaviour
 
     public Vector2 Direction { get; private set; }
     public int Taraget => _target;
+
+    private void OnEnable()
+    {
+        _dogVision.SearchTerminated += Disable;
+    }
+
+    private void OnDisable()
+    {
+        _dogVision.SearchTerminated -= Disable;
+    }
 
     private void Start()
     {
@@ -36,10 +48,10 @@ public class Dog : MonoBehaviour
         this.enabled = true;
         _transform.position = position;
         _target = target;
-        EnableDog();
+        Enable();
     }
 
-    private void EnableDog()
+    private void Enable()
     {
         _audioSource.enabled = true;
         _dogVision.enabled = true;
@@ -47,7 +59,7 @@ public class Dog : MonoBehaviour
         _animator.enabled = true;
     }
 
-    public void DisableDog()
+    private void Disable()
     {
         _audioSource.enabled = false;
         _dogVision.enabled = false;

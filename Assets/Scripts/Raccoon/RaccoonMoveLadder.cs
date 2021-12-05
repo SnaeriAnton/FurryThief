@@ -21,7 +21,7 @@ public class RaccoonMoveLadder : MonoBehaviour
         transform.position = transform.position + new Vector3(0, direction.y, 0) * 1 * Time.deltaTime;
     }
 
-    public bool ClimbLadder()
+    public bool Climb()
     {
         if (_seenLadder == true && _onLadder == false)
         {
@@ -41,7 +41,7 @@ public class RaccoonMoveLadder : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.GetComponent<Ladder>())
+        if (collision.TryGetComponent<Ladder>(out Ladder ladder))
         {
             _seenLadder = true;
         }

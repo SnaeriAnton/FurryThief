@@ -130,7 +130,6 @@ public class Shop : MonoBehaviour
                     RemoveTool(number);
                 }
             }
-
         }
     }
 }

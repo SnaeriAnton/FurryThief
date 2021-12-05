@@ -99,7 +99,7 @@ public class RaccoonInput : MonoBehaviour
 
     private void OnClimedLadder()
     {
-        _onLadder = _raccoonMoveLadder.ClimbLadder();
+        _onLadder = _raccoonMoveLadder.Climb();
     }
 
     private void OnEnterDoor()

@@ -15,7 +15,7 @@ public class RaccoonBreakingDoor : MonoBehaviour
         if (_openBreakingDoor == true)
         {
             EnableMovePlayer();
-            _lock.CloseLockPanelBreaking();
+            _lock.ClosePanelBreaking();
         }
     }
 

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Hook
   m_EditorClassIdentifier: 
   _name: Hook
-  _prica: 600
+  _prica: 1
   _icon: {fileID: 21300000, guid: 0e97e96891e923a4f85f15cd1cb54334, type: 3}
   _stolen: 0
   _bag: 0
-  _bought: 0
+  _bought: 1
   _toolObject: {fileID: 3872178336734559470, guid: 26244c0352d8bf64881f63e53fc26279, type: 3}

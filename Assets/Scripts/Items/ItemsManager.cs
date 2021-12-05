@@ -34,7 +34,6 @@ public class ItemsManager : MonoBehaviour
         int halfItems = countItems / 2;
         if (halfItems < countStoleItems)
         {
-            Debug.Log(1);
             SignalingTurnOn?.Invoke();
         }
     }

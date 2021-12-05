@@ -71,8 +71,8 @@ public class Raccoon : MonoBehaviour
             Tool tool = _itemView.Item as Tool; 
             if (tool as Tool)
             {
-                _pocket.AddTool(tool);
                 _itemView.Destroy();
+                _pocket.AddTool(tool);
             }
             else
             {
@@ -99,7 +99,7 @@ public class Raccoon : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>())
+        if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
         {
             DiePlayer();
         }

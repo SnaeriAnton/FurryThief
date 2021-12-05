@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class ItemView : MonoBehaviour
 {
     [SerializeField] protected Item _item;
@@ -34,7 +36,7 @@ public class ItemView : MonoBehaviour
 
     public void Destroy()
     {
-        StealItem();
+        Steal();
         Stolen?.Invoke();
         Destroy(this.gameObject);
     }
@@ -44,14 +46,14 @@ public class ItemView : MonoBehaviour
         _boxCollider2D.enabled = true;
     }
 
-    private void StealItem()
+    private void Steal()
     {
         _item.Steal();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Raccoon>() || collision.GetComponent<Hook>())
+        if (collision.TryGetComponent<Raccoon>(out Raccoon raccoon) || collision.TryGetComponent<Hook>(out Hook hook))
         {
             _lable.enabled = true;
         }

@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Money
   _prica: 10
   _icon: {fileID: 21300000, guid: ec94c960d00e667489247e8999dea32b, type: 3}
-  _stolen: 1
+  _stolen: 0

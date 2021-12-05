@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Transform))]
 public class GarageGates : MonoBehaviour
 {
     [SerializeField] private Transform _transform;
 
     private bool _key = false;
-
 
     private void Update()
     {
@@ -20,7 +18,7 @@ public class GarageGates : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<GarageKey>())
+        if (collision.TryGetComponent<GarageKey>(out GarageKey garageKey))
         {
             _key = true;
         }

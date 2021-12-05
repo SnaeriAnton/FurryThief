@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Transform))]
 public class Lock : MonoBehaviour
 {
     [SerializeField] private Transform _transform;
@@ -19,29 +18,29 @@ public class Lock : MonoBehaviour
 
     private void OnEnable()
     {
-        _lockOpener.BreakingDoor += CloseLock;
+        _lockOpener.BreakingDoor += Close;
     }
 
     private void OnDisable()
     {
-        _lockOpener.BreakingDoor -= CloseLock;
+        _lockOpener.BreakingDoor -= Close;
     }
 
-    public void ShowLock(Transform transformDoor)
+    public void Show(Transform transformDoor)
     {
         gameObject.SetActive(true);
         _openLock = true;
         _transform.position = new Vector2(transformDoor.position.x, transformDoor.position.y + 1);
     }
 
-    private void CloseLock()
+    private void Close()
     {
         Opened?.Invoke();
-        CloseLockPanelBreaking();
+        ClosePanelBreaking();
         Closed?.Invoke();
     }
 
-    public void CloseLockPanelBreaking()
+    public void ClosePanelBreaking()
     {
         gameObject.SetActive(false);
         _openLock = false;

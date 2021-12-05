@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Shirt
   _prica: 6
   _icon: {fileID: 21300000, guid: 5bd586adc79e2ea488e134718a4d2218, type: 3}
-  _stolen: 1
+  _stolen: 0

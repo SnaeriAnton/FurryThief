@@ -9,7 +9,7 @@ public class FireSound : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Raccoon>())
+        if (collision.TryGetComponent<Raccoon>(out Raccoon raccoon))
         {
             _audioSource.enabled = true;
         }

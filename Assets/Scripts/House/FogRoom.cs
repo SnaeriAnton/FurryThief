@@ -13,10 +13,10 @@ public class FogRoom : MonoBehaviour
 
     private void Update()
     {
-        ChangeColorFog();
+        ChangeColor();
     }
 
-    private void ChangeColorFog()
+    private void ChangeColor()
     {
         if (_fogColor == true)
         {
@@ -26,7 +26,7 @@ public class FogRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Raccoon>())
+        if (collision.TryGetComponent<Raccoon>(out Raccoon raccoon))
         {
             _fogColor = true;
         }

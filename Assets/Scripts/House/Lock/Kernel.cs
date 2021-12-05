@@ -21,7 +21,7 @@ public class Kernel : MonoBehaviour
 
     public bool Unblock => _unblock;
 
-    public void OpenKernel()
+    public void Open()
     {
         _unblock = true;
         _spriteRenderer.color = _colorEnable;
@@ -38,7 +38,7 @@ public class Kernel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<TurnScrewMover>())
+        if (collision.TryGetComponent<TurnScrewMover>(out TurnScrewMover turnScrewMover))
         {
             _spriteRendereChoiñe.color = _colorChpise;
         }

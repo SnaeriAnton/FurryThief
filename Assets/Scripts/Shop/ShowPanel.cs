@@ -63,7 +63,7 @@ public class ShowPanel : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Raccoon>())
+        if (collision.TryGetComponent<Raccoon>(out Raccoon raccoon))
         {
             _raccoonInShop = false;
             ClosPanel();

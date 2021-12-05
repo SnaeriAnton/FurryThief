@@ -58,7 +58,7 @@
     <Compile Include="Assets\Scripts\Raccoon\RaccoonOpener.cs" />
     <Compile Include="Assets\Scripts\Exit\DataManeger.cs" />
     <Compile Include="Assets\Scripts\Raccoon\Tools\Nippers.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Grandfather\GrandfatherSeekrRaccoon.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Grandfather\GrandfatherVision.cs" />
     <Compile Include="Assets\Scripts\House\Signaling\Sensor.cs" />
     <Compile Include="Assets\Scripts\House\Lock\LockGenerateKernelsCod.cs" />
     <Compile Include="Assets\Scripts\House\Ladders\SwitchAtticLadder.cs" />
@@ -70,7 +70,6 @@
     <Compile Include="Assets\Scripts\Common\PlayerTracker.cs" />
     <Compile Include="Assets\Scripts\House\AidKit.cs" />
     <Compile Include="Assets\Scripts\Raccoon\RaccoonExit.cs" />
-    <Compile Include="Assets\Scripts\Items\ItemsReset.cs" />
     <Compile Include="Assets\Scripts\Exit\GetInformationPlayer.cs" />
     <Compile Include="Assets\Scripts\Raccoon\Tools\Hook.cs" />
     <Compile Include="Assets\Scripts\Enemies\Points\LeftPoint.cs" />
@@ -100,7 +99,6 @@
     <Compile Include="Assets\Scripts\House\Ladders\Ladder.cs" />
     <Compile Include="Assets\Scripts\Enemies\Points\RightPoint.cs" />
     <Compile Include="Assets\Scripts\Exit\LoadScens\ShopLoad.cs" />
-    <Compile Include="Assets\Scripts\Raccoon\Tools\TurnScrewInput.cs" />
     <Compile Include="Assets\Scripts\Raccoon\RaccoonEnterDoor.cs" />
     <Compile Include="Assets\Scripts\Exit\Exit.cs" />
     <Compile Include="Assets\Scripts\UI\RaccoonInformation.cs" />
@@ -134,6 +132,7 @@
     <Compile Include="Assets\Scripts\Items\Tool.cs" />
     <Compile Include="Assets\Scripts\Raccoon\RaccoonBag.cs" />
     <Compile Include="Assets\Scripts\Exit\Backdoor.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemsResetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

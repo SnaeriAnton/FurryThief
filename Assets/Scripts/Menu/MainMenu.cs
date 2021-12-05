@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
     [SerializeField] private ConfigurationLevel _configurationLavel;
-    [SerializeField] private ItemsReset _itemReset;
+    [SerializeField] private ItemsResetter _itemReset;
     [SerializeField] private ItemsManager _itemMnager;
     [SerializeField] Button _buttonNewGame;
     [SerializeField] Button _buttonContinue;
@@ -92,7 +92,7 @@ public class MainMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         _panel.SetActive(false);
-        _configurationLavel.SetPlayerConfiguration();
+        _configurationLavel.SetPlayer();
         _buttonPlay.gameObject.SetActive(false);
         _buttonContinue.gameObject.SetActive(true);
         _buttonNewGame.gameObject.SetActive(true);

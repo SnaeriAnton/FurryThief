@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: Garage Key
   _prica: 0
   _icon: {fileID: 21300000, guid: d74e5716507747a40b64cc89b543a3d4, type: 3}
-  _stolen: 1
+  _stolen: 0
   _bag: 0
   _bought: 0
   _toolObject: {fileID: 5321933411492875601, guid: 2619b5c3d53486147a479c27a1f8ad4d, type: 3}
