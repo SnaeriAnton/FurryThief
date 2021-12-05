@@ -32,7 +32,6 @@ public class DogVision : MonoBehaviour
             _timer += Time.deltaTime;
             if (_timeToSleep <= _timer)
             {
-                Debug.Log(1);
                 SearchTerminated?.Invoke();
             }
         }
