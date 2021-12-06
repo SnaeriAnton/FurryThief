@@ -16,16 +16,16 @@ using UnityEngine.InputSystem;
 public class RaccoonInput : MonoBehaviour
 {
     [SerializeField] private Mover _mover;
-    [SerializeField] private RaccoonHide _raccoonHide;
-    [SerializeField] private RaccoonOpener _raccoonOpener;
-    [SerializeField] private RaccoonMoveLadder _raccoonMoveLadder;
-    [SerializeField] private RaccoonEnterDoor _racoonnEnterDoor;
+    [SerializeField] private RaccoonHide _hide;
+    [SerializeField] private RaccoonOpener _opener;
+    [SerializeField] private RaccoonMoveLadder _moveLadder;
+    [SerializeField] private RaccoonEnterDoor _enterDoor;
     [SerializeField] private Raccoon _raccoon;
-    [SerializeField] private RaccoonBreakingDoor _raccoonBreakingDoor;
-    [SerializeField] private RaccoonExit _raccoonExit;
+    [SerializeField] private RaccoonBreakingDoor _breakingDoor;
+    [SerializeField] private RaccoonExit _exit;
     [SerializeField] private CuterWires _cuterWires;
-    [SerializeField] private RaccoonPocket _raccoonPocket;
-    [SerializeField] private RaccoonAnimation _raccoonAnimation;
+    [SerializeField] private RaccoonPocket _pocket;
+    [SerializeField] private RaccoonAnimation _animation;
 
     private InputSistem _input;
     private float _direction;
@@ -38,7 +38,7 @@ public class RaccoonInput : MonoBehaviour
 
     private void Awake()
     {
-        _raccoonBreakingDoor.Break += BreakingDoor;
+        _breakingDoor.Break += BreakingDoor;
         _input = new InputSistem();
         _input.Enable();
 
@@ -59,7 +59,7 @@ public class RaccoonInput : MonoBehaviour
     private void OnDisable()
     {
         _input.Disable();
-        _raccoonBreakingDoor.Break -= BreakingDoor;
+        _breakingDoor.Break -= BreakingDoor;
     }
 
     private void FixedUpdate()
@@ -74,42 +74,42 @@ public class RaccoonInput : MonoBehaviour
         if (_direction != 0 && _stoped == false)
         {
             _mover.Move(new Vector2(_direction, 0), _raccoon.Speed);
-            _raccoonAnimation.RunRaccoon(true);
+            _animation.RunRaccoon(true);
         }
         else
         {
-            _raccoonAnimation.RunRaccoon(false);
+            _animation.RunRaccoon(false);
         }
 
         if (_onLadder == true)
         {
-            _raccoonMoveLadder.Move(new Vector2(0, _directionOnLadder));
+            _moveLadder.Move(new Vector2(0, _directionOnLadder));
         }
     }
 
     private void OnHide()
     {
-        _raccoonHide.Hide();
+        _hide.Hide();
     }
 
     private void OnSwitch()
     {
-        _raccoonOpener.PusheSwitc();
+        _opener.PusheSwitc();
     }
 
     private void OnClimedLadder()
     {
-        _onLadder = _raccoonMoveLadder.Climb();
+        _onLadder = _moveLadder.Climb();
     }
 
     private void OnEnterDoor()
     {
-        _racoonnEnterDoor.Descent();
+        _enterDoor.Descent();
     }
 
     private void OnOpen()
     {
-        _raccoonOpener.Open();
+        _opener.Open();
     }
 
     private void OnStealItem()
@@ -119,7 +119,7 @@ public class RaccoonInput : MonoBehaviour
 
     private void OnBreakingDoor()
     {
-        _raccoonBreakingDoor.BreakingLockDoor();
+        _breakingDoor.BreakingLockDoor();
         _stoped = false;
     }
 
@@ -130,17 +130,17 @@ public class RaccoonInput : MonoBehaviour
 
     private void OnExit()
     {
-        _raccoonExit.Exit();
+        _exit.Exit();
     }
 
     private void OnSelectUp()
     {
-        _raccoonPocket.SelectNext();
+        _pocket.SelectNext();
     }
 
     private void OnSelectDown()
     {
-        _raccoonPocket.SelectPrevious();
+        _pocket.SelectPrevious();
     }
 
     private void OnSale()

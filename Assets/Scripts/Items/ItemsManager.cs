@@ -12,6 +12,14 @@ public class ItemsManager : MonoBehaviour
     public event UnityAction SignalingTurnOn;
     public event UnityAction Won;
 
+    private void OnDisable()
+    {
+        foreach (var item in _items)
+        {
+            item.Stolen -= CheakStolenItems;
+        }
+    }
+
     public void Start()
     {
         _items = GetComponentsInChildren<ItemView>();
@@ -19,7 +27,7 @@ public class ItemsManager : MonoBehaviour
         _countItems = _items.Length;
         foreach (var item in _items)
         {
-            item.Stolen += OnItemStolen;
+            item.Stolen += CheakStolenItems;
             if (item.Item.Stolen == true)
             {
                 Destroy(item.gameObject);
@@ -38,7 +46,7 @@ public class ItemsManager : MonoBehaviour
         }
     }
 
-    private void OnItemStolen()
+    private void CheakStolenItems()
     {
         int countStoleItem = 0;
         for (int i = 0; i < _items.Length; i++)

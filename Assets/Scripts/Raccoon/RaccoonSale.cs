@@ -13,7 +13,7 @@ public class RaccoonSale : MonoBehaviour
     {
         if (_inShop == true)
         {
-            _bag.SaleItem();
+            _bag.SaleSubjects();
         }
     }
 

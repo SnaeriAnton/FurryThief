@@ -13,7 +13,7 @@ public class Dog : MonoBehaviour
     [SerializeField] private Transform _transform;
     [SerializeField] private Mover _mover;
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private DogVision _dogVision;
+    [SerializeField] private DogVision _vision;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private Animator _animator;
 
@@ -24,12 +24,12 @@ public class Dog : MonoBehaviour
 
     private void OnEnable()
     {
-        _dogVision.SearchTerminated += Disable;
+        _vision.SearchTerminated += Disable;
     }
 
     private void OnDisable()
     {
-        _dogVision.SearchTerminated -= Disable;
+        _vision.SearchTerminated -= Disable;
     }
 
     private void Start()
@@ -54,7 +54,7 @@ public class Dog : MonoBehaviour
     private void Enable()
     {
         _audioSource.enabled = true;
-        _dogVision.enabled = true;
+        _vision.enabled = true;
         _rigidbody2D.simulated = true;
         _animator.enabled = true;
     }
@@ -62,7 +62,7 @@ public class Dog : MonoBehaviour
     private void Disable()
     {
         _audioSource.enabled = false;
-        _dogVision.enabled = false;
+        _vision.enabled = false;
         _rigidbody2D.simulated = false;
         _animator.enabled = false;
     }

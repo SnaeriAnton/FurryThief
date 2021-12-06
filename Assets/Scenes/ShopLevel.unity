@@ -1248,7 +1248,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1055787371}
   m_HandleRect: {fileID: 1055787370}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1490,6 +1490,7 @@ GameObject:
   - component: {fileID: 812785398}
   - component: {fileID: 812785397}
   - component: {fileID: 812785396}
+  - component: {fileID: 812785404}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -1550,7 +1551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e4065575509634a871efd11d1da250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _getInformationPlayer: {fileID: 812785400}
+  _informationPlayer: {fileID: 812785404}
 --- !u!114 &812785400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1655,6 +1656,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &812785404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812785395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299ffca5468753e49a266ede318b1f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _configurationLevel: {fileID: 2113361407}
 --- !u!1 &930083028
 GameObject:
   m_ObjectHideFlags: 0

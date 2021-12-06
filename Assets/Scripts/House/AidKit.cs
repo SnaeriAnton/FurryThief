@@ -17,7 +17,7 @@ public class AidKit : MonoBehaviour
         _items = GetComponentsInChildren<ItemView>();
     }
 
-    public void OpenAidKit()
+    public void Open()
     {
         _spriteRenderer.sprite = _spriteOpen;
         _spriteRenderer.sortingOrder = 1;

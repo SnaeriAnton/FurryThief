@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Ingot
   _prica: 1000
   _icon: {fileID: 21300000, guid: 0d8d9b39f649adf48ada2ddfdd638a94, type: 3}
-  _stolen: 0
+  _stolen: 1

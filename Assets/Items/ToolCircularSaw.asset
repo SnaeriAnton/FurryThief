@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Circular
   _prica: 15
   _icon: {fileID: 21300000, guid: b186c5d166db78d4184fbf000036893c, type: 3}
-  _stolen: 0
+  _stolen: 1

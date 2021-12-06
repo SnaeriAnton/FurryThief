@@ -70,7 +70,6 @@
     <Compile Include="Assets\Scripts\Common\PlayerTracker.cs" />
     <Compile Include="Assets\Scripts\House\AidKit.cs" />
     <Compile Include="Assets\Scripts\Raccoon\RaccoonExit.cs" />
-    <Compile Include="Assets\Scripts\Exit\GetInformationPlayer.cs" />
     <Compile Include="Assets\Scripts\Raccoon\Tools\Hook.cs" />
     <Compile Include="Assets\Scripts\Enemies\Points\LeftPoint.cs" />
     <Compile Include="Assets\Scripts\Raccoon\Tools\ToolSelection.cs" />
@@ -81,6 +80,7 @@
     <Compile Include="Assets\Scripts\Enemies\Dog\DogVision.cs" />
     <Compile Include="Assets\Scripts\Enemies\Dog\Dog.cs" />
     <Compile Include="Assets\Scripts\Items\ItemsManager.cs" />
+    <Compile Include="Assets\Scripts\Exit\InformationPlayer.cs" />
     <Compile Include="Assets\Scripts\House\Ladders\SwitchLadderBetweenFloors.cs" />
     <Compile Include="Assets\Scripts\House\Safe\SafeOpener.cs" />
     <Compile Include="Assets\Scripts\House\Lock\Lock.cs" />
@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\House\Safe\Safe.cs" />
     <Compile Include="Assets\Scripts\House\FireSound.cs" />
     <Compile Include="Assets\Scripts\Raccoon\Tools\HouseKey.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemsResetter.cs" />
     <Compile Include="Assets\Scripts\House\Doors\GarageGates.cs" />
     <Compile Include="Assets\Scenes\Typed\HouseLevel.cs" />
     <Compile Include="Assets\Scripts\House\Ladders\SwitchCommunicationLadder.cs" />
@@ -128,11 +129,10 @@
     <Compile Include="Assets\Scripts\Raccoon\RaccoonBreakingDoor.cs" />
     <Compile Include="Assets\Scripts\Enemies\Points\LadderMovePoint.cs" />
     <Compile Include="Assets\Scripts\House\Doors\HallwayDoorLock.cs" />
-    <Compile Include="Assets\Scripts\Exit\HandOverDatas.cs" />
+    <Compile Include="Assets\Scripts\Exit\HandOverData.cs" />
     <Compile Include="Assets\Scripts\Items\Tool.cs" />
     <Compile Include="Assets\Scripts\Raccoon\RaccoonBag.cs" />
     <Compile Include="Assets\Scripts\Exit\Backdoor.cs" />
-    <Compile Include="Assets\Scripts\Items\ItemsResetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

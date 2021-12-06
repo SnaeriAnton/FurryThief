@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Grinder
   _prica: 20
   _icon: {fileID: 21300000, guid: ebec8858b27ccbb4fa00e93650694deb, type: 3}
-  _stolen: 0
+  _stolen: 1

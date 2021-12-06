@@ -30,7 +30,7 @@ public class GrandfatherVision : MonoBehaviour
             _lookPlayer = true;
         }
 
-        if (hit == false && _lookPlayer == true)
+        if (hit == false && _lookPlayer)
         {
             _lookPlayer = false;
             OnLosesPlayer?.Invoke(_grandfather.Taraget);

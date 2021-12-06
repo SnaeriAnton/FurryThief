@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Skirt
   _prica: 8
   _icon: {fileID: 21300000, guid: f4703d5b2bb8f034b996eeea03608908, type: 3}
-  _stolen: 0
+  _stolen: 1

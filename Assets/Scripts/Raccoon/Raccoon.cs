@@ -44,7 +44,7 @@ public class Raccoon : MonoBehaviour
         ScoreChanged?.Invoke(_score);
     }
 
-    public bool BuyItem(Tool tool)
+    public bool BuyTool(Tool tool)
     {
         bool itemBought = false;
         if (tool.Pricae <= _score)

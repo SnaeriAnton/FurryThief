@@ -9,7 +9,7 @@ public class RaccoonOpener : MonoBehaviour
     private Safe _safe;
     private bool _isAidKit = false;
     private bool _isSafe = false;
-    private bool _opendSafe = false;
+    private bool _openedSafe = false;
 
     public event UnityAction Opened;
 
@@ -21,22 +21,22 @@ public class RaccoonOpener : MonoBehaviour
     public void Open()
     {
 
-        if (_isAidKit == true)
+        if (_isAidKit)
         {
-            _aidKit.OpenAidKit();
+            _aidKit.Open();
         }
 
-        if (_isSafe == true)
+        if (_isSafe)
         {
-            if (_opendSafe == false)
+            if (_openedSafe == false)
             {
                 _safe.OpenInputPanel();
-                _opendSafe = true;
+                _openedSafe = true;
             }
             else
             {
                 _safe.CloseInputPanel();
-                _opendSafe = false;
+                _openedSafe = false;
             }
         }
     }
@@ -59,7 +59,7 @@ public class RaccoonOpener : MonoBehaviour
     {
         _isAidKit = false;
         _isSafe = false;
-        _opendSafe = false;
+        _openedSafe = false;
 
     }
 }

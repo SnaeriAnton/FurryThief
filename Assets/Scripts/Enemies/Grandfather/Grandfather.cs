@@ -8,25 +8,25 @@ using UnityEngine;
 public class Grandfather : MonoBehaviour
 {
     [SerializeField] private int _speed;
-    [SerializeField] private GrandfatherVision _enemySeekerPlayer;
+    [SerializeField] private GrandfatherVision _vision;
     [SerializeField] private Mover _mover;
 
     private int _target = 1;
-    private bool _followPlayerl = false;
+    private bool _hauntingPlayerl = false;
 
     public Vector2 Direction { get; private set; }
     public int Taraget => _target;
 
     private void OnEnable()
     {
-        _enemySeekerPlayer.OnSeekPlayer += MoveToPlayer;
-        _enemySeekerPlayer.OnLosesPlayer += LosesPlayer;
+        _vision.OnSeekPlayer += MoveToPlayer;
+        _vision.OnLosesPlayer += LosesPlayer;
     }
 
     private void OnDisable()
     {
-        _enemySeekerPlayer.OnSeekPlayer -= MoveToPlayer;
-        _enemySeekerPlayer.OnLosesPlayer -= LosesPlayer;
+        _vision.OnSeekPlayer -= MoveToPlayer;
+        _vision.OnLosesPlayer -= LosesPlayer;
     }
 
     private void FixedUpdate()
@@ -35,7 +35,7 @@ public class Grandfather : MonoBehaviour
         _mover.Move(direction, _speed);
     }
 
-    private int RandomDirection(int currentDirection)
+    private int ChoiceDirection(int currentDirection)
     {
         int direction = Random.Range(-1, 2);
         direction = Random.Range(-1, 2);
@@ -46,7 +46,7 @@ public class Grandfather : MonoBehaviour
         return direction;
     }
 
-    private int RandomDirectionStairs()
+    private int ChoiceDirectionLadder()
     {
         int direction = Random.Range(-1, 2);
         return direction;
@@ -55,19 +55,19 @@ public class Grandfather : MonoBehaviour
     private void MoveToPlayer()
     {
         _speed = 3;
-        _followPlayerl = true;
+        _hauntingPlayerl = true;
     }
 
     private void LosesPlayer(int direction)
     {
-        _followPlayerl = false;
+        _hauntingPlayerl = false;
         _target = direction * -1;
         _speed = 2;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_followPlayerl == false)
+        if (_hauntingPlayerl == false)
         {
             if (collision.TryGetComponent<RightPoint>(out RightPoint rightPoint))
             {
@@ -81,12 +81,12 @@ public class Grandfather : MonoBehaviour
 
             if (collision.TryGetComponent<Point>(out Point point))
             {
-                _target = RandomDirection(_target);
+                _target = ChoiceDirection(_target);
             }
 
             if (collision.TryGetComponent<LadderMovePoint>(out LadderMovePoint ladderMovePoint))
             {
-                Direction = new Vector2(0, RandomDirectionStairs());
+                Direction = new Vector2(0, ChoiceDirectionLadder());
             }
 
             if (collision.TryGetComponent<LadderPoint>(out LadderPoint ladderPoint))

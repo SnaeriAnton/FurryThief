@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Artifact
   _prica: 300
   _icon: {fileID: 21300000, guid: de7ce5a435ed91f46b9fe97e23cafcd3, type: 3}
-  _stolen: 0
+  _stolen: 1

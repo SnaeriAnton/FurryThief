@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Medicines
   _prica: 10
   _icon: {fileID: 21300000, guid: 0c956f006c7f0af4c93f64ad00cf22dc, type: 3}
-  _stolen: 0
+  _stolen: 1

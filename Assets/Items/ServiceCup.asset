@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Cup
   _prica: 12
   _icon: {fileID: 21300000, guid: 18c051d8a76d8bc44817c09e20d0dc4c, type: 3}
-  _stolen: 0
+  _stolen: 1

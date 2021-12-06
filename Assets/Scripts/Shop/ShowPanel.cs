@@ -28,13 +28,13 @@ public class ShowPanel : MonoBehaviour
 
     private void OnOpenPanel()
     {
-        if (_raccoonInShop == true)
+        if (_raccoonInShop)
         {
-            OpenPanel();
+            Open();
         }
     }
 
-    private void OpenPanel()
+    private void Open()
     {
         if (_panelOpened == false)
         {
@@ -48,11 +48,11 @@ public class ShowPanel : MonoBehaviour
         }
     }
 
-    private void ClosPanel()
+    private void Clos()
     {
-        if (_panelOpened == true)
+        if (_panelOpened)
         {
-            OpenPanel();
+            Open();
         }
     }
 
@@ -66,7 +66,7 @@ public class ShowPanel : MonoBehaviour
         if (collision.TryGetComponent<Raccoon>(out Raccoon raccoon))
         {
             _raccoonInShop = false;
-            ClosPanel();
+            Clos();
 
         }
     }

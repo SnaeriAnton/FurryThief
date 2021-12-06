@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Speaker Right
   _prica: 10
   _icon: {fileID: 21300000, guid: fc9a8e8e01e4a854eb42d943a7540ede, type: 3}
-  _stolen: 0
+  _stolen: 1

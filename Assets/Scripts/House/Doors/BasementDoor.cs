@@ -6,7 +6,7 @@ public class BasementDoor : MonoBehaviour
 {
     [SerializeField] private Transform _transform;
 
-    public Vector2 GetPositionBasement()
+    public Vector2 GetPosition()
     {
         return _transform.position;
     }

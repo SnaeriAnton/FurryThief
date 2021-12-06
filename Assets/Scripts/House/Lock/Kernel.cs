@@ -8,10 +8,10 @@ using UnityEngine.Events;
 public class Kernel : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private Color _colorEnable;
-    [SerializeField] private Color _colorDisable;
-    [SerializeField] private Color _colorChpise;
-    [SerializeField] private Color _colorDefault;
+    [SerializeField] private Color _enable;
+    [SerializeField] private Color _disable;
+    [SerializeField] private Color _chpise;
+    [SerializeField] private Color _default;
     [SerializeField] private SpriteRenderer _spriteRendereChoiñe;
     [SerializeField] private AudioSource _audioSource;
 
@@ -24,7 +24,7 @@ public class Kernel : MonoBehaviour
     public void Open()
     {
         _unblock = true;
-        _spriteRenderer.color = _colorEnable;
+        _spriteRenderer.color = _enable;
         _audioSource.enabled = true;
         Unlocked?.Invoke();
     }
@@ -32,7 +32,7 @@ public class Kernel : MonoBehaviour
     public void Bloc()
     {
         _unblock = false;
-        _spriteRenderer.color = _colorDisable;
+        _spriteRenderer.color = _disable;
         _audioSource.enabled = false;
     }
 
@@ -40,12 +40,12 @@ public class Kernel : MonoBehaviour
     {
         if (collision.TryGetComponent<TurnScrewMover>(out TurnScrewMover turnScrewMover))
         {
-            _spriteRendereChoiñe.color = _colorChpise;
+            _spriteRendereChoiñe.color = _chpise;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _spriteRendereChoiñe.color = _colorDefault;
+        _spriteRendereChoiñe.color = _default;
     }
 }

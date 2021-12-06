@@ -26,7 +26,6 @@ public class DogVision : MonoBehaviour
 
         Debug.DrawRay(_transform.position, _transform.right, Color.red);
 
-
         if (hit == false)
         {
             _timer += Time.deltaTime;

@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Phone
   _prica: 250
   _icon: {fileID: 21300000, guid: b6978f57ccbf12b4491a6a11bd2ade3f, type: 3}
-  _stolen: 0
+  _stolen: 1

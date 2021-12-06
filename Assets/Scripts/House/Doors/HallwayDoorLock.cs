@@ -6,17 +6,17 @@ using UnityEngine;
 public class HallwayDoorLock : MonoBehaviour
 {
     [SerializeField] private CompositeCollider2D _compositeCollider2D;
-    [SerializeField] private ItemsManager _itemManager;
+    [SerializeField] private ItemsManager _itemsManager;
 
 
     private void OnEnable()
     {
-        _itemManager.SignalingTurnOn += CloseDoor;
+        _itemsManager.SignalingTurnOn += CloseDoor;
     }
 
     private void OnDisable()
     {
-        _itemManager.SignalingTurnOn -= CloseDoor;
+        _itemsManager.SignalingTurnOn -= CloseDoor;
     }
 
     private void CloseDoor()

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using IJunior.TypedScenes;
 
-[RequireComponent(typeof(GetInformationPlayer))]
+[RequireComponent(typeof(InformationPlayer))]
 public class Exit : MonoBehaviour
 {
-    [SerializeField] private GetInformationPlayer _getInformationPlayer;
+    [SerializeField] private InformationPlayer _informationPlayer;
 
     private bool _player = false;
     private bool _inHouse = false;
@@ -17,25 +17,17 @@ public class Exit : MonoBehaviour
         _inHouse = TryGetComponent<HouseLoad>(out HouseLoad houseLoad);
     }
 
-    public void LogOff(bool player)
-    {
-        if (player == true)
-        {
-            ShopLevel.Load(_getInformationPlayer);
-        }
-    }
-
     private void GetOut()
     {
         if (_player == true)
         {
             if (_inHouse == true)
             {
-                ShopLevel.Load(_getInformationPlayer);
+                ShopLevel.Load(_informationPlayer);
             }
             else
             {
-                HouseLevel.Load(_getInformationPlayer);
+                HouseLevel.Load(_informationPlayer);
             }
         }
         _raccoonExit.CameOut -= GetOut;

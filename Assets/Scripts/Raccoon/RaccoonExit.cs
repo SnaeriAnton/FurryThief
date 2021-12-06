@@ -16,11 +16,11 @@ public class RaccoonExit : MonoBehaviour
 
     public void Exit()
     {
-        if (_exit == true)
+        if (_exit)
         {
             CameOut?.Invoke();
         }
-        else if (_backdoor == true)
+        else if (_backdoor)
         {
             _transfor.position = _positionExit;
         }        
@@ -36,7 +36,7 @@ public class RaccoonExit : MonoBehaviour
         if (collision.TryGetComponent<Backdoor>(out Backdoor backdoor))
         {
             _backdoor = true;
-            _positionExit = backdoor.GetPositionExit();
+            _positionExit = backdoor.GetPosition();
         }
     }
 

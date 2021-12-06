@@ -20,7 +20,7 @@ public class RaccoonBag : MonoBehaviour
         BagChanged?.Invoke(_subjects.Count, _bagCopacity);
     }
 
-    public void HandOverItems(List<Subject> subjects)
+    public void HandOverSubjects(List<Subject> subjects)
     {
         _subjects = subjects;
     }
@@ -30,12 +30,12 @@ public class RaccoonBag : MonoBehaviour
         _bagCopacity = maxItems;
     }
 
-    public List<Subject> GetItems()
+    public List<Subject> GetSubjects()
     {
         return _subjects;
     }
 
-    public int GetMaxItem()
+    public int GetMaxSubjects()
     {
         return _bagCopacity;
     }
@@ -53,7 +53,7 @@ public class RaccoonBag : MonoBehaviour
         return _addedItem;
     }
 
-    public void SaleItem()
+    public void SaleSubjects()
     {
         for (int i = 0; i < _subjects.Count; i++)
         {

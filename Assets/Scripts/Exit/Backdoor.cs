@@ -6,7 +6,7 @@ public class Backdoor : MonoBehaviour
 {
     [SerializeField] private Exit _exit;
 
-    public Vector2 GetPositionExit()
+    public Vector2 GetPosition()
     {
         Vector2 position = new Vector2(_exit.transform.position.x + 2, _exit.transform.position.y);
         return position;

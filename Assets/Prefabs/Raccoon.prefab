@@ -249,16 +249,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mover: {fileID: 4927491945576819368}
-  _raccoonHide: {fileID: 4927491945576819369}
-  _raccoonOpener: {fileID: 4927491945576819360}
-  _raccoonMoveLadder: {fileID: 4927491945576819361}
-  _racoonnEnterDoor: {fileID: 4927491945576819423}
+  _hide: {fileID: 4927491945576819369}
+  _opener: {fileID: 4927491945576819360}
+  _moveLadder: {fileID: 4927491945576819361}
+  _enterDoor: {fileID: 4927491945576819423}
   _raccoon: {fileID: 4927491945576819362}
-  _raccoonBreakingDoor: {fileID: 4927491945576819420}
-  _raccoonExit: {fileID: 4927491945576819419}
+  _breakingDoor: {fileID: 4927491945576819420}
+  _exit: {fileID: 4927491945576819419}
   _cuterWires: {fileID: 1290174203}
-  _raccoonPocket: {fileID: 4927491945576819421}
-  _raccoonAnimation: {fileID: 223234832}
+  _pocket: {fileID: 4927491945576819421}
+  _animation: {fileID: 223234832}
 --- !u!114 &4927491945576819368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a9ba30554beb94684d86a6e3a8de75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transfor: {fileID: 4927491945576819363}
 --- !u!114 &1904475360
 MonoBehaviour:
   m_ObjectHideFlags: 0

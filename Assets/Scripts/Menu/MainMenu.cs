@@ -12,9 +12,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private ConfigurationLevel _configurationLavel;
     [SerializeField] private ItemsResetter _itemReset;
     [SerializeField] private ItemsManager _itemMnager;
-    [SerializeField] Button _buttonNewGame;
-    [SerializeField] Button _buttonContinue;
-    [SerializeField] Button _buttonPlay;
+    [SerializeField] Button _newGame;
+    [SerializeField] Button _continue;
+    [SerializeField] Button _play;
     [SerializeField] private TMP_Text _winGame;
     [SerializeField] private TMP_Text _gameOver;
     [SerializeField] private Raccoon _raccoon;
@@ -46,9 +46,9 @@ public class MainMenu : MonoBehaviour
         if (_configurationLavel.RaccoonPlays == true)
         {
             _panel.SetActive(false);
-            _buttonPlay.gameObject.SetActive(false);
-            _buttonContinue.gameObject.SetActive(true);
-            _buttonNewGame.gameObject.SetActive(true);
+            _play.gameObject.SetActive(false);
+            _continue.gameObject.SetActive(true);
+            _newGame.gameObject.SetActive(true);
         }
         else
         {
@@ -82,9 +82,9 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 0;
         _panel.SetActive(true);
         _gameOver.enabled = true;
-        _buttonPlay.gameObject.SetActive(false);
-        _buttonContinue.gameObject.SetActive(false);
-        _buttonNewGame.gameObject.SetActive(true);
+        _play.gameObject.SetActive(false);
+        _continue.gameObject.SetActive(false);
+        _newGame.gameObject.SetActive(true);
         _raccoon.Caught -= GameOver;
     }
 
@@ -93,9 +93,9 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1;
         _panel.SetActive(false);
         _configurationLavel.SetPlayer();
-        _buttonPlay.gameObject.SetActive(false);
-        _buttonContinue.gameObject.SetActive(true);
-        _buttonNewGame.gameObject.SetActive(true);
+        _play.gameObject.SetActive(false);
+        _continue.gameObject.SetActive(true);
+        _newGame.gameObject.SetActive(true);
     }
 
     private void Continue()
@@ -123,8 +123,8 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 0;
         _panel.SetActive(true);
         _winGame.enabled = true;
-        _buttonPlay.gameObject.SetActive(false);
-        _buttonContinue.gameObject.SetActive(false);
-        _buttonNewGame.gameObject.SetActive(true);
+        _play.gameObject.SetActive(false);
+        _continue.gameObject.SetActive(false);
+        _newGame.gameObject.SetActive(true);
     }
 }

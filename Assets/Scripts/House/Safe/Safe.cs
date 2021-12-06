@@ -14,12 +14,12 @@ public class Safe : MonoBehaviour
     private ItemView[] _items;
     private void OnEnable()
     {
-        _safeOpener.Opened += OpenSafe;
+        _safeOpener.Opened += Open;
     }
 
     private void OnDisable()
     {
-        _safeOpener.Opened -= OpenSafe;
+        _safeOpener.Opened -= Open;
     }
 
     private void Start()
@@ -37,7 +37,7 @@ public class Safe : MonoBehaviour
         _safeOpener.ClodePanel();
     }
 
-    public void OpenSafe()
+    public void Open()
     {
         _spriteRenderer.sprite = _spriteOpen;
         _spriteRenderer.sortingOrder = 1;

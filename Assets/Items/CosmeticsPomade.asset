@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Pomada
   _prica: 10
   _icon: {fileID: 21300000, guid: c259bbba777725a42806b8506ab18274, type: 3}
-  _stolen: 0
+  _stolen: 1

@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Notebook
   _prica: 200
   _icon: {fileID: 21300000, guid: 6b60d43c8eaaad048a60b2b735badbab, type: 3}
-  _stolen: 0
+  _stolen: 1

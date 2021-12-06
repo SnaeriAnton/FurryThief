@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Powder
   _prica: 4
   _icon: {fileID: 21300000, guid: a4b2edd9a518d28458b6b448206f0406, type: 3}
-  _stolen: 0
+  _stolen: 1

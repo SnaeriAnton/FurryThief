@@ -29,7 +29,7 @@ public class Shop : MonoBehaviour
         _input.Shop.SelectLeft.performed += ctx => OnSelectNext();
         _input.Shop.Sell.performed += ctx => OnSell();
         AddToolInContainer();
-        _sale = _raccoon.BuyItem;
+        _sale = _raccoon.BuyTool;
     }
 
     private void OnDisable()
@@ -110,10 +110,10 @@ public class Shop : MonoBehaviour
 
     private void SellTool(int number)
     {
-        TrySellItem(number);
+        TrySellTool(number);
     }
 
-    private void TrySellItem(int number)
+    private void TrySellTool(int number)
     {
         if (_panel.RaccoonInShop == true && _panel.PanelOpend == true)
         {

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Transform))]
 public class RaccoonEnterDoor : MonoBehaviour
 {
     [SerializeField] private Transform _transform;
@@ -12,7 +11,7 @@ public class RaccoonEnterDoor : MonoBehaviour
 
     public void Descent()
     {
-        if (_nearBasmenDoor == true)
+        if (_nearBasmenDoor)
         {
             _transform.position = _doorPositionBasment;
         }
@@ -23,7 +22,7 @@ public class RaccoonEnterDoor : MonoBehaviour
         if (collision.TryGetComponent<BasementDoor>(out BasementDoor doorPositionBasment))
         {
             _nearBasmenDoor = true;
-            _doorPositionBasment = doorPositionBasment.GetPositionBasement();
+            _doorPositionBasment = doorPositionBasment.GetPosition();
         }
     }
 
