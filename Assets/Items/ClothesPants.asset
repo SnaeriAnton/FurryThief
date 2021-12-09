@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Pants
   _prica: 10
   _icon: {fileID: 21300000, guid: bc57c7f019aac6249904d725af556880, type: 3}
-  _stolen: 1
+  _stolen: 0

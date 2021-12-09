@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class RaccoonPocket : MonoBehaviour
 {
-    [SerializeField] private ToolSelection _tamplate;
-    [SerializeField] private Scrollbar _verticalScrollBar;
+    [SerializeField] private ToolSelection _tamplateTool;
+    //[SerializeField] private Scrollbar _verticalScrollBar;
     [SerializeField] private Raccoon _raccoon;
-    [SerializeField] private GameObject _toolContent;
+    //[SerializeField] private GameObject _toolContent;
 
     private List<Tool> _tools = new List<Tool>();
     private List<GameObject> _toolsObjects = new List<GameObject>();
@@ -20,16 +20,15 @@ public class RaccoonPocket : MonoBehaviour
     private int _nextTool = -1;
     private int _previousTool = 1;
 
+    private GameObject _toolContent;
+    private VerticalScrollbar _scrollbar;
+    private Scrollbar _verticalScrollBar;
+
     private int _toolsCount => _toolsInPocket.Count - 1;
 
-    public List<Tool> GetTools()
+    private void Awake()
     {
-        return _tools;
-    }
-
-    public void HandOverTools(List<Tool> tools)
-    {
-        AddTools(tools);
+        FindToolContent();
     }
 
     public void AddTool(Tool tool)
@@ -37,16 +36,31 @@ public class RaccoonPocket : MonoBehaviour
         _tools.Add(tool);
         AddToolInContainer(tool);
         AddToolInHand(tool);
-        CalculationSpeScrollBar();
+        CalculationScrollBar();
     }
 
     public void AddToolInContainer(Tool tool)
     {
-        ToolSelection view = Instantiate(_tamplate, _toolContent.transform);
+        ToolSelection view = Instantiate(_tamplateTool, _toolContent.transform);
         view.Renderer(tool);
 
         _toolsInPocket.Add(view);
         _toolsInPocket[_toolNumber].SelectTool();
+    }
+
+    public void AddToolInOtherContainer()
+    {
+        FindToolContent();
+        _toolsInPocket.Clear();
+        foreach (var tool in _tools)
+        {
+            ToolSelection view = Instantiate(_tamplateTool, _toolContent.transform);
+            view.Renderer(tool);
+            _toolsInPocket.Add(view);
+
+        }
+            _toolsInPocket[_toolsInPocket.Count-1].SelectTool();
+        CalculationScrollBar();
     }
 
     public void SelectNext()
@@ -57,6 +71,13 @@ public class RaccoonPocket : MonoBehaviour
     public void SelectPrevious()
     {
         Select(_previousTool);
+    }
+
+    private void FindToolContent()
+    {
+        _toolContent = FindObjectOfType<ContetntTools>().gameObject;
+        _scrollbar = FindObjectOfType<VerticalScrollbar>();
+        _verticalScrollBar = _scrollbar.GetComponent<Scrollbar>();
     }
 
     private void Select(int offset)
@@ -86,7 +107,7 @@ public class RaccoonPocket : MonoBehaviour
         _verticalScrollBar.value = valueScrollBar;
     }
 
-    private void CalculationSpeScrollBar()
+    private void CalculationScrollBar()
     {
         if (_toolsCount > 2)
         {
@@ -110,7 +131,7 @@ public class RaccoonPocket : MonoBehaviour
         }
         tools[_toolNumber].SetActive(true);
     }
-    
+
     private void AddTools(List<Tool> tools)
     {
         for (int i = 0; i < tools.Count; i++)

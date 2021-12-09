@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Brush
   _prica: 2
   _icon: {fileID: 21300000, guid: be33c5f526bbf734cb27ca78b3fefdb1, type: 3}
-  _stolen: 1
+  _stolen: 0

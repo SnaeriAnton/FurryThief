@@ -19,6 +19,7 @@ public class Sensor : MonoBehaviour
     private  void WorkAlarm()
     {
         _alarm = true;
+        _audioSource.enabled = true;
         _mover.SetPosition(new Vector2(_transform.position.x + (5 * _distance), _transform.position.y + 0.3f), _direction);
     }
 
@@ -29,10 +30,9 @@ public class Sensor : MonoBehaviour
         _audioSource.enabled = false;
     }
 
-    public void Enabke()
+    public void Enable()
     {
         _circleCollider2D.enabled = true;
-        _audioSource.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,7 +45,7 @@ public class Sensor : MonoBehaviour
             }
         }
 
-        if (collision.TryGetComponent<DogVision>(out DogVision dogVision))
+        if (collision.TryGetComponent<Dog>(out Dog dogVision))
         {
             _sensor.SetActive(false);
         }

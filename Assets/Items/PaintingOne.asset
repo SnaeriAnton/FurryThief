@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Painting
   _prica: 60
   _icon: {fileID: 21300000, guid: f61a7cb4ce3a7dd4e98649530fcc506f, type: 3}
-  _stolen: 1
+  _stolen: 0

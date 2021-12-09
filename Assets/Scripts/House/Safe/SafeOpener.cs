@@ -15,7 +15,7 @@ public class SafeOpener : MonoBehaviour
     {
         foreach (var nunberButton in _numberButtons)
         {
-            nunberButton.Pushed -= OnOpen;
+            nunberButton.Pushed -= Open;
         }
     }
 
@@ -24,7 +24,7 @@ public class SafeOpener : MonoBehaviour
         _numberButtons = GetComponentsInChildren<NumberButton>();
         foreach (var nunberButton in _numberButtons)
         {
-            nunberButton.Pushed += OnOpen;
+            nunberButton.Pushed += Open;
         }
     }
 
@@ -41,7 +41,7 @@ public class SafeOpener : MonoBehaviour
         }
     }
 
-    private void OnOpen(string number)
+    private void Open(string number)
     {
         _inputCod += number;
         CheakCod(_inputCod);

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using IJunior.TypedScenes;
 
-[RequireComponent(typeof(InformationPlayer))]
 public class Exit : MonoBehaviour
 {
-    [SerializeField] private InformationPlayer _informationPlayer;
+    [SerializeField] private ConfigurationLevel _configurationLevel;
 
-    private bool _player = false;
+    private bool _playerAtExit = false;
     private bool _inHouse = false;
     private RaccoonExit _raccoonExit;
 
@@ -19,15 +18,15 @@ public class Exit : MonoBehaviour
 
     private void GetOut()
     {
-        if (_player == true)
+        if (_playerAtExit == true)
         {
             if (_inHouse == true)
             {
-                ShopLevel.Load(_informationPlayer);
+                ShopLevel.Load(_configurationLevel.RaccoonPlays);
             }
             else
             {
-                HouseLevel.Load(_informationPlayer);
+                HouseLevel.Load(_configurationLevel.RaccoonPlays);
             }
         }
         _raccoonExit.CameOut -= GetOut;
@@ -38,7 +37,7 @@ public class Exit : MonoBehaviour
     {
         if (collision.TryGetComponent<RaccoonExit>(out RaccoonExit raccoonExit))
         {
-            _player = true;
+            _playerAtExit = true;
             _raccoonExit = raccoonExit;
             _raccoonExit.CameOut += GetOut;
         }
@@ -46,7 +45,7 @@ public class Exit : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _player = false;
+        _playerAtExit = false;
         _raccoonExit = null;
     }
 }

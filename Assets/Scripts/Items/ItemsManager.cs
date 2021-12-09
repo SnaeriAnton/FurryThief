@@ -16,7 +16,7 @@ public class ItemsManager : MonoBehaviour
     {
         foreach (var item in _items)
         {
-            item.Stolen -= CheakStolenItems;
+            item.Stolen -= Win;
         }
     }
 
@@ -27,26 +27,46 @@ public class ItemsManager : MonoBehaviour
         _countItems = _items.Length;
         foreach (var item in _items)
         {
-            item.Stolen += CheakStolenItems;
+            item.Stolen += Win;
             if (item.Item.Stolen == true)
             {
                 Destroy(item.gameObject);
                 _countStolenItems++;
             }
         }
-        CheakNumberStolenItems(_countItems, _countStolenItems);
+
+        TurnOnSignaling(_countItems, _countStolenItems);
     }
 
-    private void CheakNumberStolenItems(int countItems, int countStoleItems)
+    private void Win()
     {
-        int halfItems = countItems / 2;
-        if (halfItems < countStoleItems)
+        bool isWin = CheakStolenItems();
+        if (isWin)
+        {
+            Won?.Invoke();
+        }
+    }
+
+    private void TurnOnSignaling(int countItems, int countStoleItems)
+    {
+        bool noticeTheftOfSubject = CheakNumberStolenItems(countItems, countStoleItems);
+        if (noticeTheftOfSubject)
         {
             SignalingTurnOn?.Invoke();
         }
     }
 
-    private void CheakStolenItems()
+    private bool CheakNumberStolenItems(int countItems, int countStoleItems)
+    {
+        int halfItems = countItems / 2;
+        if (halfItems < countStoleItems)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private bool CheakStolenItems()
     {
         int countStoleItem = 0;
         for (int i = 0; i < _items.Length; i++)
@@ -58,7 +78,8 @@ public class ItemsManager : MonoBehaviour
         }
         if (countStoleItem == _countItems)
         {
-            Won?.Invoke();
+            return true;
         }
+        return false;
     }
 }

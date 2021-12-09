@@ -8,22 +8,23 @@ using UnityEngine.UI;
 [RequireComponent(typeof(ConfigurationLevel))]
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject _panel;
+    [SerializeField] private GameObject _screenMenu;
     [SerializeField] private ConfigurationLevel _configurationLavel;
-    [SerializeField] private ItemsResetter _itemReset;
+    //[SerializeField] private ItemsResetter _itemReset;
     [SerializeField] private ItemsManager _itemMnager;
     [SerializeField] Button _newGame;
     [SerializeField] Button _continue;
     [SerializeField] Button _play;
     [SerializeField] private TMP_Text _winGame;
     [SerializeField] private TMP_Text _gameOver;
-    [SerializeField] private Raccoon _raccoon;
-
+    
+    private Raccoon _raccoon;
     private InputSistem _menu;
     private bool _pause = false;
 
     private void Awake()
     {
+        _raccoon = FindObjectOfType<Raccoon>();
         if (_itemMnager != null)
             _itemMnager.Won += Win;
         
@@ -45,18 +46,14 @@ public class MainMenu : MonoBehaviour
         _raccoon.Caught += GameOver;
         if (_configurationLavel.RaccoonPlays == true)
         {
-            _panel.SetActive(false);
+            _screenMenu.SetActive(false);
             _play.gameObject.SetActive(false);
             _continue.gameObject.SetActive(true);
             _newGame.gameObject.SetActive(true);
         }
         else
         {
-            if (_itemReset != null)
-            {
-                _itemReset.ResetItems();
-            }
-
+            _configurationLavel.ResetGameSattings();
             Time.timeScale = 0;
         }
     }
@@ -67,20 +64,20 @@ public class MainMenu : MonoBehaviour
         {
             _pause = true;
             Time.timeScale = 0;
-            _panel.SetActive(true);
+            _screenMenu.SetActive(true);
         }
         else
         {
             _pause = false;
             Time.timeScale = 1;
-            _panel.SetActive(false);
+            _screenMenu.SetActive(false);
         }
     }
 
     private void GameOver()
     {
         Time.timeScale = 0;
-        _panel.SetActive(true);
+        _screenMenu.SetActive(true);
         _gameOver.enabled = true;
         _play.gameObject.SetActive(false);
         _continue.gameObject.SetActive(false);
@@ -91,7 +88,7 @@ public class MainMenu : MonoBehaviour
     private void Play()
     {
         Time.timeScale = 1;
-        _panel.SetActive(false);
+        _screenMenu.SetActive(false);
         _configurationLavel.SetPlayer();
         _play.gameObject.SetActive(false);
         _continue.gameObject.SetActive(true);
@@ -101,15 +98,12 @@ public class MainMenu : MonoBehaviour
     private void Continue()
     {
         Time.timeScale = 1;
-        _panel.SetActive(false);
+        _screenMenu.SetActive(false);
     }
 
     private void StartNewGame()
     {
-        if (_itemReset != null)
-            _itemReset.ResetItems();
-
-        _configurationLavel.ResetConfiguration();
+        _configurationLavel.RestartGame();
         SceneManager.LoadScene(0);
     }
 
@@ -121,7 +115,7 @@ public class MainMenu : MonoBehaviour
     private void Win()
     {
         Time.timeScale = 0;
-        _panel.SetActive(true);
+        _screenMenu.SetActive(true);
         _winGame.enabled = true;
         _play.gameObject.SetActive(false);
         _continue.gameObject.SetActive(false);

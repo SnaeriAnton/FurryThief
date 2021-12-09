@@ -289,10 +289,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 3026242941775472282}
-  _colorEnable: {r: 0, g: 1, b: 0.023529412, a: 1}
-  _colorDisable: {r: 0.62352943, g: 0, b: 0, a: 1}
-  _colorChpise: {r: 0.17254902, g: 0.32941177, b: 0.12156863, a: 1}
-  _colorDefault: {r: 1, g: 1, b: 1, a: 1}
+  _enable: {r: 0, g: 1, b: 0.023529412, a: 1}
+  _disable: {r: 0.62352943, g: 0, b: 0, a: 1}
+  _selected: {r: 0.17254902, g: 0.32941177, b: 0.12156863, a: 1}
+  _default: {r: 1, g: 1, b: 1, a: 1}
   "_spriteRendereChoi\u0441e": {fileID: 3026242939958998264}
   _audioSource: {fileID: 8920329951169345716}
 --- !u!82 &8920329951169345716
@@ -680,10 +680,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 3026242940189697154}
-  _colorEnable: {r: 0, g: 1, b: 0.023529412, a: 1}
-  _colorDisable: {r: 0.62352943, g: 0, b: 0, a: 1}
-  _colorChpise: {r: 0.17254902, g: 0.32941177, b: 0.12156863, a: 1}
-  _colorDefault: {r: 1, g: 1, b: 1, a: 1}
+  _enable: {r: 0, g: 1, b: 0.023529412, a: 1}
+  _disable: {r: 0.62352943, g: 0, b: 0, a: 1}
+  _selected: {r: 0.17254902, g: 0.32941177, b: 0.12156863, a: 1}
+  _default: {r: 1, g: 1, b: 1, a: 1}
   "_spriteRendereChoi\u0441e": {fileID: 3026242940550879190}
   _audioSource: {fileID: 7714551035256316331}
 --- !u!82 &7714551035256316331
@@ -988,10 +988,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 3026242940443330444}
-  _colorEnable: {r: 0, g: 1, b: 0.023529412, a: 1}
-  _colorDisable: {r: 0.62352943, g: 0, b: 0, a: 1}
-  _colorChpise: {r: 0.17254902, g: 0.32941177, b: 0.12156863, a: 1}
-  _colorDefault: {r: 1, g: 1, b: 1, a: 1}
+  _enable: {r: 0, g: 1, b: 0.023529412, a: 1}
+  _disable: {r: 0.62352943, g: 0, b: 0, a: 1}
+  _selected: {r: 0.17254902, g: 0.32941177, b: 0.12156863, a: 1}
+  _default: {r: 1, g: 1, b: 1, a: 1}
   "_spriteRendereChoi\u0441e": {fileID: 3026242940141328858}
   _audioSource: {fileID: 3862828882979124998}
 --- !u!82 &3862828882979124998

@@ -5,10 +5,12 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     [SerializeField] private List<Tool> _tools;
-    [SerializeField] private ToolViewInShop _template;
+    [SerializeField] private ToolViewInShop _templateTool;
     [SerializeField] private GameObject _toolContainer;
-    [SerializeField] private Raccoon _raccoon;
     [SerializeField] private ShowPanel _panel;
+
+    private Raccoon _raccoon;
+
 
     private List<ToolViewInShop> _toolsInShop = new List<ToolViewInShop>();
     private int _toolNumber = 0;
@@ -22,6 +24,8 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
+        _raccoon = FindObjectOfType<Raccoon>();
+
         _input = new InputSistem();
         _input.Enable();
 
@@ -97,7 +101,7 @@ public class Shop : MonoBehaviour
 
     private void AddTool(Tool tool)
     {
-        ToolViewInShop view = Instantiate(_template, _toolContainer.transform);
+        ToolViewInShop view = Instantiate(_templateTool, _toolContainer.transform);
         view.Renderer(tool);
 
         _toolsInShop.Add(view);

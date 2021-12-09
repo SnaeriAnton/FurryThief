@@ -8,8 +8,8 @@ public class NumberButton : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private int _nameNumber;
-    [SerializeField] private Color _colorEnable;
-    [SerializeField] private Color _colorDisable;
+    [SerializeField] private Color _enable;
+    [SerializeField] private Color _disable;
 
     private bool _numberEnable = false;
 
@@ -19,14 +19,14 @@ public class NumberButton : MonoBehaviour
 
     public void PushButton()
     {
-        _spriteRenderer.color = _colorEnable;
+        _spriteRenderer.color = _enable;
         _numberEnable = true;
         Pushed?.Invoke(_nameNumber.ToString());
     }
 
     public void ThrowOffPushedButtons()
     {
-        _spriteRenderer.color = _colorDisable;
+        _spriteRenderer.color = _disable;
         _numberEnable = false;
     }
 }

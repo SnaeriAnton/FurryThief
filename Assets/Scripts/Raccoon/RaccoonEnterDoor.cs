@@ -9,7 +9,7 @@ public class RaccoonEnterDoor : MonoBehaviour
     private Vector2 _doorPositionBasment;
     private bool _nearBasmenDoor = false;
 
-    public void Descent()
+    public void GetDown()
     {
         if (_nearBasmenDoor)
         {
@@ -22,7 +22,7 @@ public class RaccoonEnterDoor : MonoBehaviour
         if (collision.TryGetComponent<BasementDoor>(out BasementDoor doorPositionBasment))
         {
             _nearBasmenDoor = true;
-            _doorPositionBasment = doorPositionBasment.GetPosition();
+            _doorPositionBasment = doorPositionBasment.GetPositionDoor();
         }
     }
 

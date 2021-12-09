@@ -104,7 +104,7 @@ public class RaccoonInput : MonoBehaviour
 
     private void OnEnterDoor()
     {
-        _enterDoor.Descent();
+        _enterDoor.GetDown();
     }
 
     private void OnOpen()

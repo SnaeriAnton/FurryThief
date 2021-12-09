@@ -20,7 +20,6 @@ public class RaccoonOpener : MonoBehaviour
 
     public void Open()
     {
-
         if (_isAidKit)
         {
             _aidKit.Open();

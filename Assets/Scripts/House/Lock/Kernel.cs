@@ -10,7 +10,7 @@ public class Kernel : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Color _enable;
     [SerializeField] private Color _disable;
-    [SerializeField] private Color _chpise;
+    [SerializeField] private Color _selected;
     [SerializeField] private Color _default;
     [SerializeField] private SpriteRenderer _spriteRendereChoiñe;
     [SerializeField] private AudioSource _audioSource;
@@ -40,7 +40,7 @@ public class Kernel : MonoBehaviour
     {
         if (collision.TryGetComponent<TurnScrewMover>(out TurnScrewMover turnScrewMover))
         {
-            _spriteRendereChoiñe.color = _chpise;
+            _spriteRendereChoiñe.color = _selected;
         }
     }
 

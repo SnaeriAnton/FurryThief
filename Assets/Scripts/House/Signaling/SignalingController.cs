@@ -26,9 +26,9 @@ public class SignalingController : MonoBehaviour
     private void Enable()
     {
         _sensors = GetComponentsInChildren<Sensor>();
-        foreach (var sebsor in _sensors)
+        foreach (var sensor in _sensors)
         {
-            sebsor.Enabke();
+            sensor.Enable();
         }
     }
 

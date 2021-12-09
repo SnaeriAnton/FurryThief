@@ -6,23 +6,21 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(RaccoonPocket))]
 [RequireComponent(typeof(RaccoonBag))]
-[RequireComponent(typeof(Mover))]
 [RequireComponent(typeof(RaccoonSale))]
 public class Raccoon : MonoBehaviour
 {
     [SerializeField] private RaccoonPocket _pocket;
     [SerializeField] private RaccoonBag _bag;
     [SerializeField] private GameObject _hand;
-    [SerializeField] private Mover _mover;
     [SerializeField] private RaccoonSale _sale;
     [SerializeField] private float _speed;
 
     private int _score = 0;
+    private int _defaultScore = 0;
     private bool _seenItem = false;
     private ItemView _itemView;
 
     public GameObject Hand => _hand;
-    public int Score => _score;
     public float Speed => _speed;
 
     public event UnityAction Caught;
@@ -33,9 +31,9 @@ public class Raccoon : MonoBehaviour
         ScoreChanged?.Invoke(_score);
     }
 
-    public void HandOverScore(int score)
+    public void ResetScore()
     {
-        _score = score;
+        _score = _defaultScore;
     }
 
     public void AddMoney(int score)
@@ -91,9 +89,13 @@ public class Raccoon : MonoBehaviour
         _sale.Sell();
     }
 
+    public void UpdateStatistic()
+    {
+        ScoreChanged?.Invoke(_score);
+    }
+
     private void DiePlayer()
     {
-        _mover.enabled = false;
         Caught?.Invoke();
     }
 

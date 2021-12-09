@@ -6,11 +6,11 @@ public class GarageGates : MonoBehaviour
 {
     [SerializeField] private Transform _transform;
 
-    private bool _key = false;
+    private bool _isKey = false;
 
     private void Update()
     {
-        if (_key == true)
+        if (_isKey == true)
         {
             _transform.rotation = Quaternion.Lerp(_transform.rotation, Quaternion.Euler(0, 0, 90), 1 * Time.deltaTime);
         }
@@ -20,7 +20,7 @@ public class GarageGates : MonoBehaviour
     {
         if (collision.TryGetComponent<GarageKey>(out GarageKey garageKey))
         {
-            _key = true;
+            _isKey = true;
         }
     }
 }

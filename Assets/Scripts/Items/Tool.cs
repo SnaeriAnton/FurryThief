@@ -25,9 +25,9 @@ public class Tool : Item
         _bought = true;
     }
 
-    public override void RestoraionStatus()
+    public override void RestoreStatus()
     {
-        base.RestoraionStatus();
+        base.RestoreStatus();
         _bought = false;
         if (_bag == true)
         {

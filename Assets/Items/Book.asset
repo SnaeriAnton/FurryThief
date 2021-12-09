@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Bool of Death
   _prica: 200
   _icon: {fileID: 21300000, guid: 87fd9c82ab589c0489620db8a5567026, type: 3}
-  _stolen: 1
+  _stolen: 0

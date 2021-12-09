@@ -12,15 +12,15 @@ public class ItemsResetter : MonoBehaviour
         GetItems();
         foreach (var item in _items)
         {
-            item.RestoraionStatus();
+            item.RestoreStatus();
         }
 
         foreach (var tool in _tools)
         {
-            tool.RestoraionStatus();
+            tool.RestoreStatus();
             if (tool.Bag == true)
             {
-                tool.RestoraionStatus();
+                tool.RestoreStatus();
             }
         }
     }

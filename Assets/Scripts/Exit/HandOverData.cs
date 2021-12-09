@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using IJunior.TypedScenes;
 
-[RequireComponent(typeof(DataManeger))]
-public class HandOverData : MonoBehaviour, ISceneLoadHandler<InformationPlayer>
+public class HandOverData : MonoBehaviour, ISceneLoadHandler<bool>
 {
-    [SerializeField] private DataManeger _dataManager;
+    [SerializeField] private ConfigurationLevel _configurationLevel;
 
-    public void OnSceneLoaded(InformationPlayer argument)
+    public void OnSceneLoaded(bool argument)
     {
-        _dataManager.HandOverData(argument);
+        Debug.Log(argument);
+        _configurationLevel.HandOver(argument);
     }
 }

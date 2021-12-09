@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 223234832}
   - component: {fileID: 223234814}
   - component: {fileID: 8812519309815345801}
+  - component: {fileID: 2135217907}
   m_Layer: 3
   m_Name: Raccoon
   m_TagString: Untagged
@@ -330,7 +331,6 @@ MonoBehaviour:
   _pocket: {fileID: 4927491945576819421}
   _bag: {fileID: 4927491945576819422}
   _hand: {fileID: 4927491946481521244}
-  _mover: {fileID: 4927491945576819368}
   _sale: {fileID: 1904475360}
   _speed: 2
 --- !u!114 &4927491945576819423
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98495218b91f7f94a94e9ca67d660b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tamplate: {fileID: -8527514804224387878, guid: 714137ce9943ad14ab4a39488e387316, type: 3}
+  _tamplateTool: {fileID: -8527514804224387878, guid: 714137ce9943ad14ab4a39488e387316, type: 3}
   _verticalScrollBar: {fileID: 0}
   _raccoon: {fileID: 4927491945576819362}
   _toolContent: {fileID: 0}
@@ -375,7 +375,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _raccoon: {fileID: 4927491945576819362}
-  _subjects: []
 --- !u!114 &4927491945576819420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +473,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.96061575, y: -0.42349672}
   m_Size: {x: 2.9287653, y: 6.497247}
   m_Direction: 0
+--- !u!114 &2135217907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4927491945576819370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd85507714471544b690385449b6ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4927491946481521244
 GameObject:
   m_ObjectHideFlags: 0

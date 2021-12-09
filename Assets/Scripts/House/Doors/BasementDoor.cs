@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BasementDoor : MonoBehaviour
 {
-    [SerializeField] private Transform _transform;
+    [SerializeField] private Transform _transformDoor;
 
-    public Vector2 GetPosition()
+    public Vector2 GetPositionDoor()
     {
-        return _transform.position;
+        return _transformDoor.position;
     }
 }

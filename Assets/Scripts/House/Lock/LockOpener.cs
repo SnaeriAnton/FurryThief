@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(LockGenerateKernelsCod))]
+[RequireComponent(typeof(LockCodeGenerator))]
 public class LockOpener : MonoBehaviour
 {
     [SerializeField] private Kernel[] _kernels;
-    [SerializeField] private LockGenerateKernelsCod _lockRandomKernelCod;
+    [SerializeField] private LockCodeGenerator _lockRandomKernelCod;
 
     private int[] _numbers = new int[3];
 

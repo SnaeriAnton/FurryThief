@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Damn Crystal
   _prica: 666
   _icon: {fileID: 21300000, guid: 66386ffa82a0b334984c591ef9ebc8d9, type: 3}
-  _stolen: 1
+  _stolen: 0

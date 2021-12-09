@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Transform))]
 public class RaccoonExit : MonoBehaviour
 {
     [SerializeField] private Transform _transfor;
@@ -36,7 +35,7 @@ public class RaccoonExit : MonoBehaviour
         if (collision.TryGetComponent<Backdoor>(out Backdoor backdoor))
         {
             _backdoor = true;
-            _positionExit = backdoor.GetPosition();
+            _positionExit = backdoor.GetPositionExit();
         }
     }
 

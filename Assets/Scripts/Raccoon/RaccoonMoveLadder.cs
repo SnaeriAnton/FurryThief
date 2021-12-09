@@ -11,7 +11,7 @@ public class RaccoonMoveLadder : MonoBehaviour
     private bool _seenLadder = false;
     private bool _onLadder = false;
 
-    public bool OnLadder => _onLadder;
+    public bool SeenLadder => _seenLadder;
 
     public event UnityAction Climbed;
     public event UnityAction GotOff;
@@ -29,9 +29,10 @@ public class RaccoonMoveLadder : MonoBehaviour
             _rigidbody2D.gravityScale = 0;
             Climbed?.Invoke();
         }
-        else
+        else if (_seenLadder == true)
         {
             _onLadder = false;
+            _seenLadder = false;
             _rigidbody2D.gravityScale = 1;
             GotOff?.Invoke();
         }
@@ -41,7 +42,7 @@ public class RaccoonMoveLadder : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<Ladder>(out Ladder ladder))
+        if ( collision.TryGetComponent<RetracrableLadder>(out RetracrableLadder retracrableLadder)) // пересмотреть 
         {
             _seenLadder = true;
         }
@@ -49,6 +50,9 @@ public class RaccoonMoveLadder : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _seenLadder = false;
+        if (collision.TryGetComponent<RetracrableLadder>(out RetracrableLadder ladder) && _onLadder == false)
+        {
+            _seenLadder = false;
+        }
     }
 }

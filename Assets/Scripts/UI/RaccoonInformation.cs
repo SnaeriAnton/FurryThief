@@ -5,16 +5,22 @@ using UnityEngine;
 
 public class RaccoonInformation : MonoBehaviour
 {
-    [SerializeField] private Raccoon _raccon;
-    [SerializeField] private RaccoonBag _bag;
     [SerializeField] private TMP_Text _raccoonLableScore;
     [SerializeField] private TMP_Text _itemsInBagLable;
     [SerializeField] private TMP_Text _bagCopacityLable;
 
+
+    private Raccoon _raccon;
+    private RaccoonBag _bag;
+
     private void OnEnable()
     {
+        _raccon = FindObjectOfType<Raccoon>(); 
+        _bag = FindObjectOfType<RaccoonBag>();  
         _raccon.ScoreChanged += ShowScor;
         _bag.BagChanged += ShowBag;
+        _bag.UpdateStatistic();
+        _raccon.UpdateStatistic();
     }
 
     private void OnDisable()

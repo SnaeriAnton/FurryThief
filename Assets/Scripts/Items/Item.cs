@@ -20,7 +20,7 @@ public abstract class Item : ScriptableObject
         _stolen = true;
     }
 
-    public virtual void RestoraionStatus()
+    public virtual void RestoreStatus()
     {
         _stolen = false;
     }

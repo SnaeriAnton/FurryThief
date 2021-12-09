@@ -15,4 +15,4 @@ MonoBehaviour:
   _name: Plate
   _prica: 13
   _icon: {fileID: 21300000, guid: 5c358d09799941144aef085c302458a3, type: 3}
-  _stolen: 1
+  _stolen: 0
