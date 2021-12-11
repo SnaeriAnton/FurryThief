@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class RaccoonPocket : MonoBehaviour
 {
     [SerializeField] private ToolSelection _tamplateTool;
-    //[SerializeField] private Scrollbar _verticalScrollBar;
     [SerializeField] private Raccoon _raccoon;
-    //[SerializeField] private GameObject _toolContent;
 
     private List<Tool> _tools = new List<Tool>();
     private List<GameObject> _toolsObjects = new List<GameObject>();
@@ -59,7 +57,10 @@ public class RaccoonPocket : MonoBehaviour
             _toolsInPocket.Add(view);
 
         }
-            _toolsInPocket[_toolsInPocket.Count-1].SelectTool();
+        if (_tools.Count > 0)
+        {
+            _toolsInPocket[_toolsInPocket.Count].SelectTool();
+        }
         CalculationScrollBar();
     }
 

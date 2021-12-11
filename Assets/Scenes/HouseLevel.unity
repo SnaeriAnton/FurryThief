@@ -32974,7 +32974,6 @@ GameObject:
   - component: {fileID: 1289511262}
   - component: {fileID: 1289511260}
   - component: {fileID: 1289511258}
-  - component: {fileID: 1289511257}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -32982,18 +32981,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1289511257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289511256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 963e90125fa333d48acc640904a1e8ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1289511258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37305,18 +37292,6 @@ Transform:
   m_Father: {fileID: 589861512}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1515705886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4927491946163169863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fd85507714471544b690385449b6ba9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1524305411 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9176315399393339398, guid: 89d40444164eafb49b44f4223324d044, type: 3}
@@ -62916,7 +62891,6 @@ GameObject:
   - component: {fileID: 677202941}
   - component: {fileID: 677202451}
   - component: {fileID: 8812519310267478628}
-  - component: {fileID: 1515705886}
   - component: {fileID: 4927491946163169867}
   m_Layer: 3
   m_Name: Raccoon

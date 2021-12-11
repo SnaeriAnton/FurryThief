@@ -47,7 +47,7 @@ public class Shop : MonoBehaviour
         _tools.RemoveAt(number);
         _toolsInShop.RemoveAt(number);
         _toolNumber = 0;
-        GetToolsOfContainer(_toolNumber);
+        SetSelectionMarker(_toolNumber);
     }
 
     private void AddToolInContainer()
@@ -59,10 +59,10 @@ public class Shop : MonoBehaviour
                 AddTool(_tools[i]);
             }
         }
-        GetToolsOfContainer(_toolNumber);
+        SetSelectionMarker(_toolNumber);
     }
 
-    private void GetToolsOfContainer(int number)
+    private void SetSelectionMarker(int number)
     {
         if (_toolsInShop.Count > 0)
         {

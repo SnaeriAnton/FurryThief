@@ -9,7 +9,6 @@ public class HandOverData : MonoBehaviour, ISceneLoadHandler<bool>
 
     public void OnSceneLoaded(bool argument)
     {
-        Debug.Log(argument);
         _configurationLevel.HandOver(argument);
     }
 }

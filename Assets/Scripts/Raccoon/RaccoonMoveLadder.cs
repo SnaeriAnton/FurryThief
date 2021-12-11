@@ -42,7 +42,7 @@ public class RaccoonMoveLadder : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if ( collision.TryGetComponent<RetracrableLadder>(out RetracrableLadder retracrableLadder)) // пересмотреть 
+        if ( collision.TryGetComponent<RetracrableLadder>(out RetracrableLadder retracrableLadder))
         {
             _seenLadder = true;
         }

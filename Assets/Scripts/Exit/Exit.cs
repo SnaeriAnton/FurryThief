@@ -7,14 +7,9 @@ public class Exit : MonoBehaviour
 {
     [SerializeField] private ConfigurationLevel _configurationLevel;
 
+    private static bool _inHouse = true;
     private bool _playerAtExit = false;
-    private bool _inHouse = false;
     private RaccoonExit _raccoonExit;
-
-    private void Start()
-    {
-        _inHouse = TryGetComponent<HouseLoad>(out HouseLoad houseLoad);
-    }
 
     private void GetOut()
     {
@@ -22,10 +17,12 @@ public class Exit : MonoBehaviour
         {
             if (_inHouse == true)
             {
+                _inHouse = false;
                 ShopLevel.Load(_configurationLevel.RaccoonPlays);
             }
             else
             {
+                _inHouse = true;
                 HouseLevel.Load(_configurationLevel.RaccoonPlays);
             }
         }

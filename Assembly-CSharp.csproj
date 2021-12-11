@@ -88,7 +88,6 @@
     <Compile Include="Assets\Scripts\Raccoon\RaccoonMoveLadder.cs" />
     <Compile Include="Assets\Scripts\Raccoon\Raccoon.cs" />
     <Compile Include="Assets\Scripts\Shop\ShowPanel.cs" />
-    <Compile Include="Assets\Scripts\Exit\LoadScens\HouseLoad.cs" />
     <Compile Include="Assets\Scenes\Typed\ShopLevel.cs" />
     <Compile Include="Assets\Scripts\House\Hiding.cs" />
     <Compile Include="Assets\Scripts\House\Signaling\SignalingController.cs" />
@@ -98,7 +97,6 @@
     <Compile Include="Assets\Scripts\Items\PaperShower.cs" />
     <Compile Include="Assets\Scripts\House\Ladders\InteractionWithLadder.cs" />
     <Compile Include="Assets\Scripts\Enemies\Points\RightPoint.cs" />
-    <Compile Include="Assets\Scripts\Exit\LoadScens\ShopLoad.cs" />
     <Compile Include="Assets\Scripts\Raccoon\RaccoonEnterDoor.cs" />
     <Compile Include="Assets\Scripts\Exit\Exit.cs" />
     <Compile Include="Assets\Scripts\UI\RaccoonInformation.cs" />
@@ -123,7 +121,6 @@
     <Compile Include="Assets\Scripts\Raccoon\Tools\GarageKey.cs" />
     <Compile Include="Assets\Scripts\Raccoon\RaccoonHide.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Raccoon\PlayerSingleton.cs" />
     <Compile Include="Assets\Scripts\House\Lock\Kernel.cs" />
     <Compile Include="Assets\Scripts\Raccoon\Tools\ComminicationKey.cs" />
     <Compile Include="Assets\Scripts\Raccoon\RaccoonBreakingDoor.cs" />

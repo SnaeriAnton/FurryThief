@@ -15,6 +15,7 @@ public class Raccoon : MonoBehaviour
     [SerializeField] private RaccoonSale _sale;
     [SerializeField] private float _speed;
 
+    public static Raccoon _raccoon;
     private int _score = 0;
     private int _defaultScore = 0;
     private bool _seenItem = false;
@@ -25,6 +26,23 @@ public class Raccoon : MonoBehaviour
 
     public event UnityAction Caught;
     public event UnityAction<int> ScoreChanged;
+
+    private void Awake()
+    {
+        if (!_raccoon)
+        {
+            DontDestroyOnLoad(gameObject);
+            _raccoon = this;
+        }
+        else
+        {
+            if (_raccoon != this)
+            {
+                Destroy(gameObject);
+
+            }
+        }
+    }
 
     private void Start()
     {

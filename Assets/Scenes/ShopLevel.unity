@@ -1513,7 +1513,6 @@ GameObject:
   - component: {fileID: 812785401}
   - component: {fileID: 812785399}
   - component: {fileID: 812785397}
-  - component: {fileID: 812785396}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -1521,18 +1520,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &812785396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812785395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04c719fa328e30d49ba4d5e1b62cb2e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &812785397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7334,7 +7321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _screenMenu: {fileID: 979874046}
   _configurationLavel: {fileID: 2113361407}
-  _itemReset: {fileID: 0}
   _itemMnager: {fileID: 0}
   _newGame: {fileID: 930083030}
   _continue: {fileID: 2091576768}
@@ -7354,6 +7340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placeOfAppearance: {fileID: 1849479340}
+  _itemReset: {fileID: 0}
 --- !u!1 &2138796978
 GameObject:
   m_ObjectHideFlags: 0

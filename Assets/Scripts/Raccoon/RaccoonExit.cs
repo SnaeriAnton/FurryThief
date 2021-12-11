@@ -35,7 +35,7 @@ public class RaccoonExit : MonoBehaviour
         if (collision.TryGetComponent<Backdoor>(out Backdoor backdoor))
         {
             _backdoor = true;
-            _positionExit = backdoor.GetPositionExit();
+            _positionExit = backdoor.Exit;
         }
     }
 
